@@ -6,7 +6,7 @@ import asyncio
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import select
-from toutiao.models.user import User
+from models.user import User
 import bcrypt
 
 ASYNC_DATABASE_URL = "mysql+aiomysql://root:Xiliu4043*.@101.200.137.199:3306/news_app?charset=utf8mb4"

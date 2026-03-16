@@ -3,8 +3,8 @@ sys.path.insert(0, r'/toutiao')
 
 import asyncio
 from sqlalchemy.ext.asyncio import AsyncSession
-from toutiao.config.db_conf import get_db
-from toutiao.crud import user as user_crud
+from config.db_conf import get_db
+from crud import user as user_crud
 
 async def test_register():
     try:
