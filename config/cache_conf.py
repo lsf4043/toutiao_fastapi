@@ -1,13 +1,19 @@
 import json
+import os
 from typing import Any
 
 import redis.asyncio as redis
 
-redis_client = redis.Redis(host="localhost",
-                           port=6379,
+# 从环境变量获取Redis配置,支持Docker部署
+REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
+REDIS_PASSWORD = os.getenv("REDIS_PASSWORD", "123456")
+
+redis_client = redis.Redis(host=REDIS_HOST,
+                           port=REDIS_PORT,
                            db=0,
                            decode_responses=True,
-                           password="123456")
+                           password=REDIS_PASSWORD)
 
 
 async def get_value(key: str):
